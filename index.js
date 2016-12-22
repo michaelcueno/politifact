@@ -20,7 +20,7 @@ var APP_ID = undefined; //replace with "amzn1.echo-sdk-ams.app.[your-unique-valu
  * The AlexaSkill prototype and helper functions
  */
 var AlexaSkill = require('./AlexaSkill'),
-    Politifact = require('./PantsOnFire');
+    PantsOnFire = require('./PantsOnFire');
 
 
 /**
@@ -68,7 +68,7 @@ Politifact.prototype.intentHandlers = {
 // Create the handler that responds to the Alexa Request.
 exports.handler = function (event, context) {
     // Create an instance of the Politifact skill.
-    var lies = new PantsOnFire();
-    lies.execute(event, context);
+    var politifact = new Politifact();
+    politifact.execute(event, context);
 };
 

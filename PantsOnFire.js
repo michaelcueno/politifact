@@ -34,7 +34,6 @@ Lie.prototype.buildResponse = function() {
 Politifact.prototype.requestResponse = function () {
 
     var Politifact = this;
-
     request(this.url, function (error, response, html) {
       if (!error && response.statusCode == 200) {
         var $ = cheerio.load(html);
@@ -45,11 +44,12 @@ Politifact.prototype.requestResponse = function () {
 }
 
 Politifact.prototype.send = function(lies) {
-    var response = "";
+    var response = "The top lies for the day are... ";
     lies.reverse(); 
     while (lies.length) {
         var lie = lies.pop();
         response += lie.buildResponse();
+        response += "... ";
     }
     this.response.tell(response);
 }
