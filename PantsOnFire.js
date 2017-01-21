@@ -25,7 +25,7 @@ function Lie($, content) {
 }
 
 Lie.prototype.buildResponse = function() { 
-    return this.statementSource + " lied today by saing: " + this.statement + ". The truth is: " + this.quote; 
+    return this.statementSource + " lied today by saying: " + this.statement + "... But, the truth is: " + this.quote; 
 }
 
 /**
